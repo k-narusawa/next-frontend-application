@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { Small } from 'stories/Button.stories';
 import styles from "./index.module.scss";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
