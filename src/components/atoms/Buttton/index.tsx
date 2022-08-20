@@ -5,7 +5,7 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   size?: 'small' | 'large';
   disabled?:boolean;
-  onClick: () => {};
+  onClick: () => void;
 };
 
 const Button = ({ children, size, onClick, className }: Props) => {
