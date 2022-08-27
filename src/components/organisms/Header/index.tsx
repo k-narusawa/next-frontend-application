@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import styles from './index.module.scss'
-import HomeIcon from '@mui/icons-material/Home';
+import {HomeIcon} from 'components/atoms/IconButton'
+import { useRouter } from 'next/router';
 
 type Props = {
   isLogin: boolean,
@@ -9,6 +10,10 @@ type Props = {
 };
 
 const Header = ({ isLogin, isLoading, logout }: Props) => {
+  const router = useRouter()
+  const handleHomeIconClick = () => {
+    router.push('/')
+  }
 
   return(
     <>
@@ -18,7 +23,7 @@ const Header = ({ isLogin, isLoading, logout }: Props) => {
         <h1 className={classNames(
           styles['headline']
         )} >
-          <a><HomeIcon fontSize="large" /></a>
+          <HomeIcon size="large" onClick={handleHomeIconClick} />
         </h1>
         <ul className={classNames(
           styles['nav-list']
