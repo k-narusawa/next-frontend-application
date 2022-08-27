@@ -5,11 +5,10 @@ import HomeIcon from '@mui/icons-material/Home';
 type Props = {
   isLogin: boolean,
   isLoading: boolean,
-  login: ()=> void,
   logout: () => void
 };
 
-const Header = ({ isLogin, isLoading, login, logout }: Props) => {
+const Header = ({ isLogin, isLoading, logout }: Props) => {
 
   return(
     <>
@@ -25,7 +24,7 @@ const Header = ({ isLogin, isLoading, login, logout }: Props) => {
           styles['nav-list']
         )}>
           {(() => {
-            if(isLogin){
+            if(!isLogin){
               return (
                 <li className={classNames(
                   styles['nav-items']
@@ -44,7 +43,7 @@ const Header = ({ isLogin, isLoading, login, logout }: Props) => {
                 <li className={classNames(
                   styles['nav-items']
                 )}>
-                  <a href="/logout">ログアウト</a>
+                  <a href="/" onClick={logout} >ログアウト</a>
                 </li>
               )
             }
