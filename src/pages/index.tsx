@@ -1,5 +1,4 @@
-import Button from 'components/atoms/Buttton';
-import Input from 'components/atoms/Input';
+import LayoutContainer from 'containers/LayoutContainer';
 import { GetServerSideProps, NextPage } from 'next';
 
 type SSRProps = {
@@ -11,7 +10,9 @@ const HomePage: NextPage<SSRProps> = (props) => {
 
   return (
     <>
-      <h1>TOPページ</h1>
+      <LayoutContainer>
+        <h1>TOPページ</h1>
+      </LayoutContainer>
     </>
   )
 }
