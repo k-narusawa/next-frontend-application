@@ -43,7 +43,7 @@ export const useLogin = () => {
         })
         
       setIsLoading(false)
-    },[setIsLoading],
+    },[setIsLoading]
   )
 
   const logout = useCallback(
