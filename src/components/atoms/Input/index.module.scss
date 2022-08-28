@@ -1,43 +1,23 @@
 .input-component {
-  width: 90%;
-  margin: 80px auto;
-  position: relative;
-  background: #e0e5ec;
-  > input {
-    // position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    appearance: none;
-    box-sizing: border-box;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    padding: 20px;
-    text-shadow: 1px 1px 0 #fff;
-    box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
-    width: 100%;
-    transition: all 0.2s ease-in-out;
-    &:focus {
-      box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
-      + label {
-        top: -20px;
-        left: 15px;
-        color: #333c5f;
-        font-size: 0.8rem;
-        line-height: 0.8rem;
-        transition: 0.3s;
-      }
-    }
+  text-align: center;
+  :focus {
+    border: 2px solid #ff9900; 
+    z-index: 10;
+    outline: 0;
   }
   > label {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    color: #808080;
+    text-align: left;
   }
+  > input {
+    width: 80%; 
+    padding: 10px 15px; 
+    font-size: 16px;
+    border-radius: 3px; 
+    border: 2px solid #ddd; 
+    box-sizing: border-box;
+  }
+}
+
+.error-message{
+  color: red;
 }

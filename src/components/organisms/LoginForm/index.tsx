@@ -20,28 +20,18 @@ const LoginForm = ({onLogin}: LoginFormProps) => {
     formState: { errors },
   } = useForm<LoginFormData>()
 
-  const onSubmit = (data: LoginFormData) => {
+  const onSubmit = async(data: LoginFormData) => {
     const { loginId, password } = data
-
+    console.log(errors.loginId?.message)
     onLogin && onLogin(loginId, password)
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={classNames(
-        styles['login-form-component']
-      )}>
-        <div className={classNames(
-          styles['login-form']
-        )}>
-          <Input label='ログインID' />
-        </div>
-        <div className={classNames(
-          styles['login-form']
-        )}>
-          <Input label='パスワード' />
-        </div>
-        <Button children='LOGIN' size='small' onClick={()=>{console.log('login challenge')}} type="submit" />
+      <div className={classNames(styles['login-form-component'])}>
+          <Input register={register('loginId', {required: 'ログインIDは必須項目です'})} error={errors.loginId?.message} label='ログインID' />
+          <Input register={register('password', {required: 'パスワードは必須項目です'})} error={errors.password?.message} label='パスワード' />
+        <Button type='submit' children='ログイン' size='small' onClick={()=>{console.log('login challenge')}} />
       </div>
     </form>
   )
