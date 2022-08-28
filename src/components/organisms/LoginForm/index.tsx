@@ -10,7 +10,7 @@ export type LoginFormData = {
 };
 
 type LoginFormProps = {
-  onLogin?: (loginId: string, password: string) => void;
+  onLogin: (loginId: string, password: string) => void;
   errorMessage?: string;
 };
 
