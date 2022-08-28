@@ -5,16 +5,17 @@ type Props = {
   isLogin: boolean,
   isLoading: boolean,
   logout: () => void,
+  transitionToGitHub: ()=>void;
   children: React.ReactNode
 };
 
-const Layout = ({ isLogin, isLoading, logout, children }: Props) => {
+const Layout = ({ isLogin, isLoading, logout, transitionToGitHub, children }: Props) => {
 
   return(
     <>
       <Header isLogin={isLogin} isLoading={isLoading} logout={logout} />
         <main>{children}</main>
-      <Footer />
+      <Footer transitionToGitHub={transitionToGitHub}/>
     </>
   ) 
 }

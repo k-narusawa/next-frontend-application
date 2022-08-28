@@ -15,7 +15,6 @@ export const NoLogin = Template.bind({});
 NoLogin.args = {
   isLogin: false,
   isLoading: false,
-  login: ()=> {console.log()},
   logout: () => {console.log()}
 };
 
@@ -24,7 +23,6 @@ export const Login = Template.bind({});
 Login.args = {
   isLogin: true,
   isLoading: false,
-  login: ()=> {console.log()},
   logout: () => {console.log()}
 };
 
