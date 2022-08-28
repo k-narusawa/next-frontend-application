@@ -24,6 +24,7 @@ export const useLogin = () => {
             accessToken: response.data.accessToken,
             refreshToken: response.data.refreshToken
           })
+          router.push("/")
         })
         .catch((e: error) => {
           setIsLogin(false)
@@ -31,7 +32,6 @@ export const useLogin = () => {
         })
       
       setIsLoading(false)
-      router.push("/")
     },[setIsLoading],
   )
 

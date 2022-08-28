@@ -31,7 +31,7 @@ const LoginForm = ({onLogin}: LoginFormProps) => {
       <div className={classNames(styles['login-form-component'])}>
           <Input register={register('loginId', {required: 'ログインIDは必須項目です'})} error={errors.loginId?.message} label='ログインID' />
           <Input register={register('password', {required: 'パスワードは必須項目です'})} error={errors.password?.message} label='パスワード' />
-        <Button type='submit' children='ログイン' size='small' onClick={()=>{console.log('login challenge')}} />
+        <Button type='submit' children='ログイン' size='small' />
       </div>
     </form>
   )
