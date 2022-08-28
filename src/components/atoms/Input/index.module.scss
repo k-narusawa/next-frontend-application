@@ -1,7 +1,7 @@
 .input-component {
   text-align: center;
   :focus {
-    border: 2px solid #ff9900; 
+    border: 2px solid #ff9900;
     z-index: 10;
     outline: 0;
   }
@@ -9,15 +9,15 @@
     text-align: left;
   }
   > input {
-    width: 80%; 
-    padding: 10px 15px; 
+    width: 80%;
+    padding: 10px 15px;
     font-size: 16px;
-    border-radius: 3px; 
-    border: 2px solid #ddd; 
+    border-radius: 3px;
+    border: 2px solid #ddd;
     box-sizing: border-box;
   }
 }
 
-.error-message{
+.error-message {
   color: red;
 }

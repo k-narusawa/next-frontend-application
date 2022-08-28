@@ -1,4 +1,4 @@
-.login-form-component{
+.login-form-component {
   margin: auto;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -6,7 +6,7 @@
   background-color: #f0f8ff;
   display: block;
 
-  > button{
+  > button {
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -14,12 +14,12 @@
   }
 }
 
-.login-form{
+.login-form {
   margin: auto;
   width: 80%;
 }
 
-.error-message{
+.error-message {
   color: red;
   text-align: center;
 }

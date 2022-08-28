@@ -1,15 +1,26 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import {CancelIcon, CheckBoxIcon, CheckBoxOutlineBlankIcon, CloseIcon, CloudUploadIcon, GitHubIcon, HomeIcon, PersonIcon, PersonOutlineIcon, SearchIcon}  from './index';
+import {
+  CancelIcon,
+  CheckBoxIcon,
+  CheckBoxOutlineBlankIcon,
+  CloseIcon,
+  CloudUploadIcon,
+  GitHubIcon,
+  HomeIcon,
+  PersonIcon,
+  PersonOutlineIcon,
+  SearchIcon,
+} from "./index";
 
 export default {
-  title: 'atoms/IconButton',
+  title: "atoms/IconButton",
   component: GitHubIcon,
   onClick: {
-    description: 'onClickイベントハンドラ',
+    description: "onClickイベントハンドラ",
     table: {
-      type: { summary: 'function' },
+      type: { summary: "function" },
     },
   },
 } as ComponentMeta<typeof GitHubIcon>;
@@ -27,11 +38,10 @@ const Template: ComponentStory<typeof GitHubIcon> = (args) => (
     <GitHubIcon {...args} />
     <PersonIcon {...args} />
   </>
-)
+);
 
-export const Normal = Template.bind({})
+export const Normal = Template.bind({});
 
 Normal.args = {
-  size: "medium"
-}
-
+  size: "medium",
+};

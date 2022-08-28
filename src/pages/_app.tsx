@@ -1,5 +1,5 @@
-import { AppProps } from 'next/app';
-import { RecoilRoot } from "recoil"; 
+import { AppProps } from "next/app";
+import { RecoilRoot } from "recoil";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -7,6 +7,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Component {...pageProps} />
     </RecoilRoot>
   );
-}
+};
 
-export default MyApp
+export default MyApp;

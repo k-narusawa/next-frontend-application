@@ -1,10 +1,10 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Footer  from './index';
+import Footer from "./index";
 
 export default {
-  title: 'organisms/Footer',
+  title: "organisms/Footer",
   component: Footer,
 } as ComponentMeta<typeof Footer>;
 

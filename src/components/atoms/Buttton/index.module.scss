@@ -3,17 +3,17 @@
   font-size: 16px;
   font-weight: 100;
   color: #fff;
-  background-color: #66CCFF;
+  background-color: #66ccff;
   border-radius: 4px;
   border: none;
   &:hover {
     color: #fff;
-    background: #99CCFF;
+    background: #99ccff;
   }
   &.-small {
-    padding: 12px 16px
+    padding: 12px 16px;
   }
   &.-large {
-    padding: 18px 24px
+    padding: 18px 24px;
   }
 }

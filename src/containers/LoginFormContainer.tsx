@@ -1,11 +1,9 @@
-import LoginForm from 'components/organisms/LoginForm'
-import { useLogin } from 'hooks/useLogin'
+import LoginForm from "components/organisms/LoginForm";
+import { useLogin } from "hooks/useLogin";
 
-const LoginFormContaier = ()=>{
-  const {login, errorMessage} = useLogin()
+const LoginFormContaier = () => {
+  const { login, errorMessage } = useLogin();
 
-  return (
-    <LoginForm onLogin={login} errorMessage={errorMessage} />
-  )
-}
-export default LoginFormContaier
+  return <LoginForm onLogin={login} errorMessage={errorMessage} />;
+};
+export default LoginFormContaier;
