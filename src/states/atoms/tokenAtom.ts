@@ -1,8 +1,8 @@
 import { atom } from 'recoil';
 import { AtomKeys } from 'states/recoilKeys';
-import { login } from 'types';
+import { token } from 'types';
 
-export const tokenState = atom<login>({
+export const tokenState = atom<token>({
   key: AtomKeys.TOKEN_STATE,
   default: {
     accessToken: "",
