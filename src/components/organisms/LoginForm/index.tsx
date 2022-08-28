@@ -11,9 +11,10 @@ export type LoginFormData = {
 
 type LoginFormProps = {
   onLogin?: (loginId: string, password: string) => void
+  errorMessage?: string
 }
 
-const LoginForm = ({onLogin}: LoginFormProps) => {
+const LoginForm = ({onLogin, errorMessage}: LoginFormProps) => {
   const {
     register,
     handleSubmit,
@@ -31,6 +32,7 @@ const LoginForm = ({onLogin}: LoginFormProps) => {
       <div className={classNames(styles['login-form-component'])}>
           <Input register={register('loginId', {required: 'ログインIDは必須項目です'})} error={errors.loginId?.message} label='ログインID' />
           <Input register={register('password', {required: 'パスワードは必須項目です'})} error={errors.password?.message} label='パスワード' />
+          <p className={classNames(styles['error-message'])}>{errorMessage}</p>
         <Button type='submit' children='ログイン' size='small' />
       </div>
     </form>
