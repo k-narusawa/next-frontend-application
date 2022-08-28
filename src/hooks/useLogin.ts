@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { loginSelector } from 'states/selectors/loginSelector'
 import { tokenSelector } from 'states/selectors/tokenSelector'
-import { login } from 'types'
+import { token } from 'types'
 
 export const useLogin = () => {
   const setIsLogin = useSetRecoilState(loginSelector)
@@ -19,7 +19,7 @@ export const useLogin = () => {
       password: string
     ) => {
       const data = {loginId: loginId, password: password}
-      await apiClient.post<login>("/api/login", data)
+      await apiClient.post<token>("/api/login", data)
         .then((response) => {
           setIsLogin(true)
           setToken({
