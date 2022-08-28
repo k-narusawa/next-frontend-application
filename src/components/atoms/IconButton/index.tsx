@@ -11,6 +11,8 @@ import {
   Close,
   GitHub,
   Person,
+  Login,
+  Logout
 } from '@mui/icons-material'
 import { SvgIcon } from '@mui/material'
 
@@ -53,3 +55,5 @@ export const CloudUploadIcon = withIconStyle(CloudUpload)
 export const CloseIcon = withIconStyle(Close)
 export const GitHubIcon = withIconStyle(GitHub)
 export const PersonIcon = withIconStyle(Person)
+export const LoginIcon = withIconStyle(Login)
+export const LogoutIcon = withIconStyle(Logout)

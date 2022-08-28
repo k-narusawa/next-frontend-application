@@ -1,27 +1,25 @@
 .header-component{
-  height: 30px;
+  height: 50px;
   width: 100%;
-  padding: 10px 0;
-  margin-bottom: 30px;
   background-color: #337079;
   color: white;
 }
 
-.headline{
-  line-height: 0px;
+.home-icon{
   float: left;
-  font-size: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: 10px;
-  margin-bottom: 30px;
 }
 
 .nav-list {
   float: right;
-  margin-right: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
   list-style: none;
 }
 .nav-list-item {
-  list-style: none;
-  display: inline-block;
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }

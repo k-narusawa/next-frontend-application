@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import styles from './index.module.scss'
-import {HomeIcon} from 'components/atoms/IconButton'
+import {HomeIcon, LoginIcon, LogoutIcon, PersonIcon} from 'components/atoms/IconButton'
 import { useRouter } from 'next/router';
 
 type Props = {
@@ -20,11 +20,11 @@ const Header = ({ isLogin, isLoading, logout }: Props) => {
       <header className={classNames(
         styles['header-component']
       )} >
-        <h1 className={classNames(
-          styles['headline']
+        <div className={classNames(
+          styles['home-icon']
         )} >
           <HomeIcon size="large" onClick={handleHomeIconClick} />
-        </h1>
+        </div>
         <ul className={classNames(
           styles['nav-list']
         )}>
@@ -32,9 +32,9 @@ const Header = ({ isLogin, isLoading, logout }: Props) => {
             if(!isLogin){
               return (
                 <li className={classNames(
-                  styles['nav-items']
+                  styles['nav-list-item']
                 )}>
-                  <a href="/login">ログイン</a>
+                  <LoginIcon size='large' onClick={()=>router.push('/login')} />
                 </li>
               )
             // TODO: ローディング処理
@@ -46,9 +46,10 @@ const Header = ({ isLogin, isLoading, logout }: Props) => {
             } else {
               return (
                 <li className={classNames(
-                  styles['nav-items']
+                  styles['nav-list-item']
                 )}>
-                  <a href="/" onClick={logout} >ログアウト</a>
+                  <PersonIcon size='large' />
+                  <LogoutIcon size='large' onClick={logout} />
                 </li>
               )
             }

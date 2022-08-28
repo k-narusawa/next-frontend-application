@@ -7,7 +7,6 @@ type LayoutContainerProps = {
 
 const LayoutContainer = ( { children }: LayoutContainerProps)=>{
   const {isLogin, isLoading, logout} = useLogin()
-  console.log(isLogin)
 
   return (
     <>

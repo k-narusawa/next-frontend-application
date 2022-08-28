@@ -9,6 +9,7 @@ export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false)
   const isLogin = useRecoilValue(loginSelector)
   const router = useRouter()
+  const sleep = (second: number) => new Promise(resolve => setTimeout(resolve, second * 1000))
 
   const login = useCallback(
     async(
@@ -36,7 +37,6 @@ export const useLogin = () => {
 
   const logout = useCallback(
     () => {
-      console.log('ログアウト')
       setIsLogin(false)
       setIsLoading(false)
     },
