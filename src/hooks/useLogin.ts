@@ -10,9 +10,9 @@ import { error, token } from "types";
 export const useLogin = () => {
   const setIsLogin = useSetRecoilState(loginSelector);
   const setToken = useSetRecoilState(tokenSelector);
-  const [isLoading, setIsLoading] = useState(false);
   const isLogin = useRecoilValue(loginSelector);
   const token = useRecoilValue(tokenSelector);
+  const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
 
