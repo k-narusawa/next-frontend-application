@@ -32,7 +32,6 @@ export const useLogin = () => {
       // TODO エラーハンドリング考え直す
       setIsLogin(false);
       if (
-        axios.isAxiosError(e) &&
         (e as AxiosError<error>).response?.data.status &&
         (e as AxiosError<error>).response?.data.message &&
         (e as AxiosError<error>).response?.data.errorCode
