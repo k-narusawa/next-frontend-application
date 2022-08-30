@@ -20,33 +20,29 @@ export const useLogin = () => {
     const data = { loginId: loginId, password: password };
     setIsLoading(true);
     try {
-      await apiClient.post<token>("/api/login", data).then((response) => {
-        setIsLogin(true);
-        setToken({
-          accessToken: response.data.accessToken,
-          refreshToken: response.data.refreshToken,
+      await apiClient
+        .post<token>("/api/login", data)
+        .then((response) => {
+          setIsLogin(true);
+          setToken({
+            accessToken: response.data.accessToken,
+            refreshToken: response.data.refreshToken,
+          });
+          router.push("/");
+        })
+        .catch((e: AxiosError<error>) => {
+          if (e.response?.data.errorCode === "UN_AUTHORIZED") {
+            setErrorMessage("認証に失敗しました");
+          } else if (e.response?.data.errorCode === "SERVER_ERROR") {
+            setErrorMessage("サーバーエラーが発生しました");
+          } else {
+            setErrorMessage("予期せぬエラーが発生しました");
+          }
         });
-        router.push("/");
-      });
     } catch (e) {
       // TODO エラーハンドリング考え直す
       setIsLogin(false);
-      if (
-        (e as AxiosError<error>).response?.data.status &&
-        (e as AxiosError<error>).response?.data.message &&
-        (e as AxiosError<error>).response?.data.errorCode
-      ) {
-        // TODO ifのネスト読みにくすぎるのでeslintを書き直す
-        if (e.response?.data.errorCode === "UN_AUTHORIZED") {
-          setErrorMessage("認証に失敗しました！");
-        } else if (e.response?.data.errorCode === "SERVER_ERROR") {
-          setErrorMessage("サーバーエラーが発生しました！");
-        } else {
-          setErrorMessage("予期せぬエラーが発生しました！");
-        }
-      } else {
-        setErrorMessage("予期せぬエラーが発生しました！");
-      }
+      setErrorMessage("予期せぬエラーが発生しました！");
     } finally {
       setIsLoading(false);
     }
