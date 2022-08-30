@@ -14,6 +14,14 @@ apiClient.interceptors.response.use(
     return response;
   },
   (error: AxiosError<error>) => {
+    // TODO recoilでエラー管理する？
+    switch (error.response?.data.errorCode) {
+      case "UN_AUTHORIZED":
+        console.log("認証エラー");
+        break;
+      default:
+        break;
+    }
     return Promise.reject(error);
   }
 );
