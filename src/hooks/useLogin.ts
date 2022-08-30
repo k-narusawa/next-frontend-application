@@ -28,7 +28,7 @@ export const useLogin = () => {
         });
         router.push("/");
       });
-    } catch (e: any) {
+    } catch (e) {
       // TODO エラーハンドリング考え直す
       setIsLogin(false);
       if (
@@ -37,13 +37,9 @@ export const useLogin = () => {
         (e as AxiosError<error>).response?.data.errorCode
       ) {
         // TODO ifのネスト読みにくすぎるのでeslintを書き直す
-        if (
-          (e as AxiosError<error>).response?.data.errorCode === "UN_AUTHORIZED"
-        ) {
+        if (e.response?.data.errorCode === "UN_AUTHORIZED") {
           setErrorMessage("認証に失敗しました！");
-        } else if (
-          (e as AxiosError<error>).response?.data.errorCode === "SERVER_ERROR"
-        ) {
+        } else if (e.response?.data.errorCode === "SERVER_ERROR") {
           setErrorMessage("サーバーエラーが発生しました！");
         } else {
           setErrorMessage("予期せぬエラーが発生しました！");
