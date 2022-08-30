@@ -1,9 +1,20 @@
-import axios from "axios";
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { error } from "types";
 
-export const apiClient = axios.create({
+const apiClient = axios.create({
   baseURL: "http://127.0.0.1:8080",
   headers: {
     "Content-Type": "application/json",
   },
   responseType: "json",
 });
+
+apiClient.interceptors.response.use(
+  (response: AxiosResponse) => {
+    return response;
+  },
+  (error: AxiosError<error>) => {
+    return Promise.reject(error);
+  }
+);
+export default apiClient;

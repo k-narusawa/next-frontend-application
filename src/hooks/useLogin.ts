@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { apiClient } from "lib/apiClient";
+import apiClient from "lib/apiClient";
 import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
