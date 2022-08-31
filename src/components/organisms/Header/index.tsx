@@ -23,14 +23,14 @@ const Header = ({ isLogin, isLoading, logout }: Props) => {
   return (
     <>
       <header className={classNames(styles["header-component"])}>
-        <div className={classNames(styles["home-icon"])}>
+        <div className={classNames(styles["home"])}>
           <HomeIcon size="large" onClick={handleHomeIconClick} />
         </div>
-        <ul className={classNames(styles["nav-list"])}>
+        <ul className={classNames(styles["list"])}>
           {(() => {
             if (!isLogin) {
               return (
-                <li className={classNames(styles["nav-list-item"])}>
+                <li className={classNames(styles["item"])}>
                   <LoginIcon
                     size="large"
                     onClick={() => router.push("/login")}
@@ -42,7 +42,7 @@ const Header = ({ isLogin, isLoading, logout }: Props) => {
               return <></>;
             } else {
               return (
-                <li className={classNames(styles["nav-list-item"])}>
+                <li className={classNames(styles["item"])}>
                   <PersonIcon size="large" />
                   <LogoutIcon size="large" onClick={logout} />
                 </li>

@@ -1,25 +1,18 @@
 .header-component {
+  display: flex;
   height: 50px;
   width: 100%;
   background-color: #337079;
   color: white;
-}
 
-.home-icon {
-  float: left;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 10px;
-}
+  > .home {
+    margin: auto auto auto 10px;
+  }
 
-.nav-list {
-  float: right;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: 10px;
-  list-style: none;
-}
-.nav-list-item {
-  margin-top: auto;
-  margin-bottom: auto;
+  > .list {
+    margin: auto 10px auto auto;
+    list-style: none;
+  }
+  > .list > .item {
+  }
 }
