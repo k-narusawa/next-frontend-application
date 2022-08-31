@@ -1,4 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
+import { useRouter } from "next/router";
 import { error } from "types";
 
 const apiClient = axios.create({
@@ -14,12 +15,18 @@ apiClient.interceptors.response.use(
     return response;
   },
   (error: AxiosError<error>) => {
+    const router = useRouter();
     // TODO recoilでエラー管理する？
-    switch (error.response?.data.errorCode) {
-      case "UN_AUTHORIZED":
-        console.log("認証エラー");
+    console.log(error.response?.data.errorCode);
+    switch (error.response?.status) {
+      case 404:
+        router.push("/404");
+        break;
+      case 500:
+        router.push("/error");
         break;
       default:
+        router.push("/error");
         break;
     }
     return Promise.reject(error);
