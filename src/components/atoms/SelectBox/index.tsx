@@ -7,15 +7,15 @@ type Props = {
 
 const SelectBox = ({ options }: Props) => {
   return (
-  <div className={classNames(styles["selectbox-component"])}>
-    <label>
+    <div className={classNames(styles["selectbox-component"])}>
+      <label>
         <select>
           {options.map((item: string) => {
-            return <option> {item} </option>
+            return <option key={item}> {item} </option>;
           })}
         </select>
-    </label>
-  </div>
+      </label>
+    </div>
   );
 };
 

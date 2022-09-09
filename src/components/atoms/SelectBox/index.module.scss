@@ -1,4 +1,4 @@
-.selectbox-component{
+.selectbox-component {
   width: 100%;
   position: relative;
   justify-content: center;
@@ -28,7 +28,7 @@
   }
 
   ::after {
-    content: '<>';
+    content: "<>";
     font: 17px "Consolas", monospace;
     color: #333;
     -webkit-transform: rotate(90deg);

@@ -14,8 +14,8 @@ export type todo = {
   userid: string;
   todo: string;
   timeLimit: string;
-  priority: "HIGH" | "MIDDLE" | "LOW"
+  priority: "HIGH" | "MIDDLE" | "LOW";
   doneFlg: boolean;
   createdAt: string;
   updatedAt: string;
-}
+};

@@ -8,9 +8,11 @@ export default {
   component: SelectBox,
 } as ComponentMeta<typeof SelectBox>;
 
-const Template: ComponentStory<typeof SelectBox> = (args) => <SelectBox {...args} />;
+const Template: ComponentStory<typeof SelectBox> = (args) => (
+  <SelectBox {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
-  options: ["HIGH", "MIDDLE", "LOW"]
+  options: ["HIGH", "MIDDLE", "LOW"],
 };
