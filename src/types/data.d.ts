@@ -19,3 +19,7 @@ export type todo = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type ApiContext = {
+  url: string;
+};
