@@ -8,3 +8,18 @@ export type error = {
   message: string;
   errorCode: string;
 };
+
+export type todo = {
+  todoId: number;
+  userid: string;
+  todo: string;
+  timeLimit: string;
+  priority: "HIGH" | "MIDDLE" | "LOW";
+  doneFlg: boolean;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ApiContext = {
+  url: string;
+};

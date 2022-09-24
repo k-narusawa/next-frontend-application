@@ -1,0 +1,57 @@
+.todo-table-component {
+  width: 100%;
+  table {
+    width: 100%;
+  }
+  thead {
+    th {
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px;
+      color: black;
+      border: 1px solid #f1f1f1;
+      background: #00ccff; /* 奇数行の背景色を指定する */
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid #f1f1f1;
+      color: grey;
+      text-align: center;
+
+      td {
+        padding: 10px;
+        border: 1px solid #f1f1f1;
+      }
+      th {
+        padding-left: 10px;
+        border: 1px solid #f1f1f1;
+      }
+      .todo-cell {
+        width: 50%;
+      }
+      .time-limit-cell {
+        width: 20%;
+      }
+      .priority-cell {
+        width: 10%;
+      }
+      .status-cell {
+        width: 20%;
+      }
+
+      &:nth-child(odd) {
+        background: #ccffff; /* 奇数行の背景色を指定する */
+      }
+      &:hover {
+        background: rgba(
+          0,
+          0,
+          0,
+          0.2
+        ); /* マウスオーバー時の背景の色を指定する */
+        cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+      }
+    }
+  }
+}
